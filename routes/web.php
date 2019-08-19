@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Auth\Middleware\CheckToken;
+use App\Http\Middleware\ConToken;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +24,7 @@
 //Route::get('/home', 'HomeController@index')->name('home');
 
 //展示页面
-Route::get('/', 'HomeListController@index');
+Route::get('/', 'HomeListController@index')->middleware(ConToken::class);
 
 
 
